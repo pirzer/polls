@@ -1,9 +1,9 @@
 from django.contrib import admin
 from .models import Question, Choice, Vote
 
-admin.site.site_header = 'Панель управления'
-admin.site.site_title = 'Голосования и опросы'
-admin.site.index_title = 'Управление опросами и голосованиями'
+admin.site.site_header = 'Control Panel'
+admin.site.site_title = 'Polls and Polls'
+admin.site.index_title = 'Poll and Voting Management'
 
 class ChoiceInLine(admin.TabularInline):
     model = Choice

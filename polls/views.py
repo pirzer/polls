@@ -13,7 +13,7 @@ def detail(request, question_id):
     try:
         question = Question.objects.get(pk=question_id)
     except Question.DoesNotExist:
-        raise Http404('Нет такого вопроса')
+        raise Http404('There is not such question')
     return render(request, 'detail.html', {'question': question})
 
 def results(request, question_id):
@@ -36,7 +36,7 @@ def vote(request, question_id):
         if not question.user_voted(request.user):
             return render(request, 'detail.html',  {
             'question': question,
-            'error_message': 'Вы уже голосовали в этом опросе. Выберите другой опрос.',
+            'error_message': 'You have already voted in this poll. Choose a different poll.',
         })
         if user_choice:
             user_choice.votes += 1
@@ -47,6 +47,6 @@ def vote(request, question_id):
     except (KeyError, Choice.DoesNotExist):
         return render(request, 'detail.html', {
             'question': question,
-            'error_message': 'Вы не выбрали вариант ответа!',
+            'error_message': 'You have not chosen an answer!',
         })
     return render(request, 'results.html', {'question': question})

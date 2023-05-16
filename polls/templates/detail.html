@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<a class="btn btn-danger btn-sm mb-3" href="{% url 'polls:index' %}">&#8592; К опросам</a>
+<a class="btn btn-danger btn-sm mb-3" href="{% url 'polls:index' %}">&#8592;  Surver</a>
 <h1 class="text-center mb-3">{{ question.name }}</h1>
 
 {% if error_message %}
@@ -19,7 +19,7 @@
     </div>
     {% endfor %}
     <div class="text-center">
-    <input type="submit" value="Голосовать" class="btn btn-primary mt-4" />
+    <input type="submit" value="Vote" class="btn btn-primary mt-4" />
     </div>
 </form>
 </div>

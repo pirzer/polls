@@ -31,6 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# To change Debug from True to False before heroku deployment
 DEBUG = True
 
 ALLOWED_HOSTS = ['pollstrial.herokuapp.com', 'localhost']
